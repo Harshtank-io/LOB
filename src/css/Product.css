@@ -1,0 +1,73 @@
+/* products.css */
+
+/* body {
+    overflow: scroll  ;
+  } */
+.products {
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  margin-bottom: 0;
+}
+h3 {
+  text-align: center;
+  color: rgb(176, 176, 176);
+  margin-bottom: 0;
+}
+
+.toggle {
+  cursor: pointer;
+  background-color: rgb(44, 52, 63);
+  padding: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.toggle.expanded {
+  background-color: rgb(26, 24, 24);
+}
+
+.lists {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
+  padding: 0;
+  margin: 0;
+}
+
+.lists.expanded {
+  max-height: 1000px; /* Set a value that allows the content to fully expand */
+  padding: 10px;
+  margin: 10px;
+}
+
+.lists.expanded ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lists.expanded li {
+  margin: 5px 0; /* Adjust the vertical margin as needed */
+}
+
+a.list {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(235, 230, 230);
+}
+
+.menu {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  margin-top: 4%;
+  margin-bottom: 10%;
+  text-align: justify;
+}
+

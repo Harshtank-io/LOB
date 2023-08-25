@@ -1,0 +1,92 @@
+.hero-container {
+  margin-left: 7%;
+  margin-right: 4%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  padding-bottom: 2rem;
+  text-align: left;
+  align-items: flex-start;
+}
+.hero-content{
+  flex: 1;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+}
+.hero-content h1 {
+  margin: 0; 
+  text-align: left; 
+  color: whitesmoke;
+  font-size: 90px;
+  font-weight: 600;
+}
+.hero-content h3 {
+  margin: 0; 
+  text-align: left; 
+  color: whitesmoke;
+  font-weight: normal;
+}
+
+
+.lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content form {
+  margin-top: 2rem;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+}
+
+.hero-content input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.hero-content button {
+  margin-left: 10px ;
+  background-color: rgb(87, 10, 213);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#search {
+  color: white;
+  border-radius: 25px;
+  background: rgb(66, 82, 102);
+  padding: 20px;
+  width: 200px;
+  height: 10px;
+}
+
+form img {
+  border-radius: 30px;
+  width: 40px; 
+  height: 40px;
+  filter: invert(1);  
+}
+
+@media screen and (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* Use row layout on larger screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .lottie {
+    flex: 1;
+  }
+}
