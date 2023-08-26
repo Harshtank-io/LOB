@@ -95,16 +95,25 @@
   .content__blog__container {
     width: 84%;
   }
+  .cards > h1{
+    font-size: 50px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .cards__items {
     display: flex;
   }
+  .cards > h1{
+    font-size: 50px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
   .cards__item {
     margin-bottom: 2rem;
+  }
+  .cards > h1{
+    font-size: 50px;
   }
 }

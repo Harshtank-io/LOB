@@ -1,0 +1,53 @@
+/* Default styles */
+.info-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  background: rgb(249, 187, 43);
+  height: 500px;
+  width: 80%;
+}
+
+.info-text {
+  flex: 1;
+  padding: 50px;
+  justify-content: left;
+}
+
+.info-text > h1 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.why {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info-image {
+  display: flex;
+  align-items: center;
+}
+
+.info-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    height: auto; /* Let content determine height */
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+
+  .info-text {
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+}

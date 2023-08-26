@@ -1,0 +1,27 @@
+.me-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  width: 80%;
+  color: white;
+}
+.me-text {
+  flex: 1;
+  padding: 50px;    
+  justify-content: left;
+}
+.me-info {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.me-text > h1 {
+  font-size: 60px;
+}
+.me-img > img {
+  width: 500px;
+  height: 500px;
+}

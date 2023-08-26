@@ -1,14 +1,16 @@
 import React from "react";
-import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Cards from "../components/Cards";
+import Info from "../components/Info";
+import Me from "../components/me";
 
 function Home() {
   return (
     <>
        <HeroSection />
-       <Cards /> 
-      {/* <Footer /> */}
+       <Cards />
+       <Info/>
+       <Me/>
     </>
   );
 }
