@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect,useState} from 'react'
 import { Button } from "./components/Button";
 import { Link } from "react-router-dom";
 import './css/Navbar.css'
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -11,7 +12,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
-    if (window.innerWidth <= 960) {
+    if (window.innerWidth <= 1200) {
       setButton(false);
     } else {
       setButton(true);
@@ -21,9 +22,13 @@ function Navbar() {
   useEffect(() => {
     showButton();
     window.addEventListener("resize", showButton);
+
+    return () => {
+      window.removeEventListener("resize", showButton);
+    }
   }, []);
   
-  window.removeEventListener("resize", showButton);
+ 
 
   return (
     
@@ -39,8 +44,8 @@ function Navbar() {
               alt="Linesofbinary"
             />
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          <div className="menu-icon"   onClick={handleClick}>
+             <i className={click ? "fas fa-times" : "fas fa-bars"} /> 
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">

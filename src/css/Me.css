@@ -25,3 +25,27 @@
   width: 500px;
   height: 500px;
 }
+
+@media screen and (max-width: 1200px) {
+  .me-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+  }
+
+  .me-text {
+    padding: 20px; /* Reduce padding for smaller screens */
+    text-align: left; /* Center text on smaller screens */
+  }
+
+  .me-img > img {
+    width: 80%; /* Adjust image width on smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .me-text > h1 {
+    font-size: 40px; /* Further reduce font size for smaller screens */
+  }
+}
+
+
