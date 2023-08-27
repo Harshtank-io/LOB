@@ -76,9 +76,12 @@
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
-  .NavbarItems {
+@media screen and (max-width: 960px) {
+  .nav-item {
     position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .nav-menu {
@@ -89,13 +92,14 @@
     height: 90vh;
     position: absolute;
     top: 80px;
-    left: -50%;
+    left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -105,7 +109,7 @@
   .nav-links {
     text-align: center;
     padding: 2rem;
-    width: 100%;
+    width: 60%;
     display: table;
   }
 
@@ -113,6 +117,7 @@
     background-color: #fff;
     color: #242424;
     border-radius: 0;
+    height: 0.2px;
   }
 
   .navbar-logo {
@@ -130,6 +135,7 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
+    color: #fff;
   }
 
   .fa-times {
@@ -140,9 +146,10 @@
   .nav-links-mobile {
     display: block;
     text-align: center;
-    margin: 2rem auto;
+    margin-top: 1%;
+    margin-left: 14%;
     border-radius: 4px;
-    width: 80%;
+    width: 50%;
     text-decoration: none;
     font-size: 1.5rem;
     background-color: transparent;

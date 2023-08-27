@@ -11,11 +11,6 @@ const categories = [
         leetcodeLink: "https://leetcode.com/problems/two-sum/",
       },
       {
-        id: 1,
-        title: "Two Sum",
-        leetcodeLink: "https://leetcode.com/problems/two-sum/",
-      },
-      {
         id: 2,
         title: "Best Time to Buy and Sell Stock",
         leetcodeLink:
@@ -76,12 +71,6 @@ const categories = [
         title: "Sum of Two Integers",
         leetcodeLink: "https://leetcode.com/problems/sum-of-two-integers/",
       },
-
-      {
-        id: 11,
-        title: "Sum of Two Integers",
-        leetcodeLink: "https://leetcode.com/problems/sum-of-two-integers/",
-      },
       {
         id: 12,
         title: "Number of 1 Bits",
@@ -108,11 +97,6 @@ const categories = [
   {
     name: "Dynamic Programming",
     problems: [
-      {
-        id: 16,
-        title: "Climbing Stairs",
-        leetcodeLink: "https://leetcode.com/problems/climbing-stairs/",
-      },
       {
         id: 16,
         title: "Climbing Stairs",
