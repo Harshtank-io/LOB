@@ -466,69 +466,23 @@ const categories = [
   // ... other categories ...
 ];
 
-// function ProblemList({ problems }) {
-//   return (
-//     <ul>
-//       {problems.map((problem) => (
-//         <li key={problem.id}>
-//           <a
-//             className="list"
-//             href={problem.leetcodeLink}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             {problem.title}
-//           </a>
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
-
-// export default function Product() {
-//   const [activeCategory, setActiveCategory] = useState(null);
-
-//   const toggleCategory = (categoryName) => {
-//     setActiveCategory(activeCategory === categoryName ? null : categoryName);
-//   };
-
-//   return (
-//     <div>
-//       <h1 className="products"> Blind 75</h1>
-//       <h3>List of Google's Blind 75 Problems!!</h3>
-//       <div className="menu">
-//         {categories.map((category) => (
-//           <div
-//             key={category.name}
-//             className={`toggle ${
-//               activeCategory === category.name ? "expanded" : ""
-//             }`}
-//             onClick={() => toggleCategory(category.name)}
-//           >
-//             {category.name}
-//             {activeCategory === category.name && (
-//               <div className={`lists expanded`}>
-//                 <ProblemList problems={category.problems} />
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 function ProblemList({ problems, onProblemToggle }) {
   return (
     <ul>
       {problems.map((problem) => (
         <li key={problem.id}>
           <label className="problem">
+            <div className="chk-pro">
+              <div className="chk">
             <input
               type="checkbox"
+              className="custom-checkbox"
               checked={problem.checked}
+              onClick={(event) => event.stopPropagation()} 
               onChange={() => onProblemToggle(problem.id)}
             />
+            </div>
+            <div className="pro">
             <a
               className={`list ${problem.checked ? 'checked' : ''}`}
               href={problem.leetcodeLink}
@@ -537,6 +491,8 @@ function ProblemList({ problems, onProblemToggle }) {
             >
               {problem.title}
             </a>
+            </div>
+            </div>
           </label>
         </li>
       ))}
@@ -584,19 +540,34 @@ export default function Product() {
             }`}
             onClick={() => toggleCategory(category.name)}
           >
-            {category.name}
+            <div className="cat-bar">
+              <div className="cat">
+           {category.name}
+           </div>
+            <div className="progress-bar">
+              ({category.problems.filter((problem) => problem.checked).length}/{category.problems.length})
+                  <div className="progress-bar-container">
+                    <div
+                      className="progress-bar-fill"
+                      style={{
+                        width: `${getCategoryProgress(category).toFixed(2)}%`,
+                      }}
+                    ></div>
+                  </div>
+                  
+                </div>
+                </div>
             {activeCategory === category.name && (
               <div className={`lists expanded`}>
                 <ProblemList
                   problems={category.problems}
                   onProblemToggle={toggleProblem}
                 />
-                <div className="progress-bar">
-                  {category.name} Progress: {getCategoryProgress(category).toFixed(2)}%
-                </div>
+               
               </div>
             )}
           </div>
+          
         ))}
       </div>
     </div>
