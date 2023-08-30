@@ -4,7 +4,7 @@ export default function Services(){
     return(
         <>
         <div className="dendrogram">
-        <Dendrogram width={800} height={500}/>
+        <Dendrogram />
         </div>
         </>
     )
