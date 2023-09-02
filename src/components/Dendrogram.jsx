@@ -8,7 +8,7 @@ import '../css/Service.css'
 const white = '#ffffff';
 const color = '#f9bb2b';
 
-const merlinsbeard = '#f7f7f3';
+const storkColor = '#f7f7f3';
 const background = 'rgb(0,0,0,0)';
 
 
@@ -136,7 +136,7 @@ export default function Dendrogram() {
                 <LinkVertical
                   key={`cluster-link-${i}`}
                   data={link}
-                  stroke={merlinsbeard}
+                  stroke={storkColor}
                   strokeWidth="1  "
                   strokeOpacity={0.5}
                   fill="none"
