@@ -6,6 +6,9 @@ export default function Services(){
         <div className="dendrogram">
         <Dendrogram />
         </div>
+        <div>
+            
+        </div>
         </>
     )
 }
