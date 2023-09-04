@@ -1,0 +1,25 @@
+.learn-container{
+    color: aqua;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head{
+    text-align: center;
+    font-size: 50px;
+}
+.topic-container {
+    background-color: wheat;
+    
+    border: blue solid;
+    display: flex;
+    justify-content: space-evenly; /* Adjust as needed */
+  }
+  
+  .topic {
+    margin: 20px;
+    border: 1px solid #ccc; /* Add styling to each topic */
+    padding: 10px;
+    margin: 5px; /* Adjust margin as needed for spacing */
+  }
+  

@@ -46,7 +46,6 @@ function Navbar() {
             />
           </Link>
           <div className="menu-icon"   onClick={handleClick}>
-             {/* <i className={click ? "fas fa-times" : "fas fa-bars"} />  */}
              <FontAwesomeIcon icon={click ? faTimes : faBars} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -80,6 +79,15 @@ function Navbar() {
                 onClick={closeMobileMenu}
               >
                 Practice
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/Learn"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Learn
               </Link>
             </li>
 
