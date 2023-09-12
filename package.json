@@ -19,17 +19,16 @@
     "@visx/visx": "^3.3.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
-    "codemirror": "^2.33.0",
     "dotenv": "^16.3.1",
     "lottie-react": "^2.4.0",
     "openai": "^4.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
-    "react-codemirror2": "^7.2.1",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
+    "react-zoom-pan-pinch": "^3.1.0",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {

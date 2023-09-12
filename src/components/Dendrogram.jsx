@@ -3,56 +3,86 @@ import { Group } from '@visx/group';
 import { Cluster, hierarchy } from '@visx/hierarchy';
 import { HierarchyPointNode } from '@visx/hierarchy/lib/types';
 import { LinkVertical } from '@visx/shape';
-import '../css/Service.css'
+import '../css/Service.css';
 
 const white = '#ffffff';
 const color = '#f9bb2b';
 
 const storkColor = '#f7f7f3';
 const background = 'rgb(0,0,0,0)';
-
-
+const nodecolor = '#61738b';
 
 const clusterData = {
-  name: 'DSA',
-  children:[
+  name: 'Data Structure and Alogorithm',
+  children: [
     {
-      name:"Array",
-      children:[
+      name: 'Array',
+      children: [
         {
-          name:"2-Pointer",
+          name: '2-Pointer',
+          children: [
+            {
+              name: 'Binary Search',
+            },
+            {
+              name: 'Sliding Window',
+            },
+
+          ],
+        },
+        {
+          name:"Recursion",
           children:[
             {
-              name:"Binary Search",
-
-            },
-            {
-              name:"Sliding Window"
-            },
-            {
-              name:"Linked List"
+              name:"Strings"
             }
+
           ]
         },
         {
-          name:"Stack"
-        }
-      ]
-    }
-    ]
+          name: 'Stack',
+          children:[
+            {
+              name: 'Queue',
+              children:[
+                {
+                  name :'Trees',
+                  children:[
+                    {
+                      name:'Heaps'
+                    }
+                  ]
+                },
+                {
+                  name:'Graphs'
+                }
+              ]
+            },
+
+          ]
+        },
+      ],
+    },
+  ],
 };
 
-
 function RootNode({ node }) {
-  const width = 70;
-  const height = 30;
-  const centerX = -width / 2;
-  const centerY = -height / 2;
+  // Calculate text dimensions
   const font = 20;
+  const textWidth = node.data.name.length * font * 0.6; // Adjust this multiplier as needed
+  const textHeight = font;
+  const padding = 10;
 
   return (
     <Group top={node.y} left={node.x}>
-      <rect width={width} height={height} y={centerY} x={centerX} fill={color} rx={10} />
+      <rect
+        width={textWidth + padding * 2}
+        height={textHeight + padding * 2}
+        y={-textHeight / 2 - padding}
+        x={-textWidth / 2 - padding}
+        fill={color}
+        rx={10}
+      />
       <text
         dy=".33em"
         fontSize={font}
@@ -66,22 +96,20 @@ function RootNode({ node }) {
   );
 }
 
+
 function Node({ node }) {
   const isRoot = node.depth === 0;
 
   if (isRoot) return <RootNode node={node} />;
 
-  const nodeWidth = 50;
-  const nodeHeight = 20;
-
   return (
     <Group top={node.y} left={node.x}>
       {node.depth !== 0 && (
         <rect
-          width={nodeWidth}
-          height={nodeHeight}
-          fill={background}
-          rx={10} // Apply rounded corners to non-parent nodes
+          width={node.width}
+          height={node.height}
+          fill={nodecolor}
+          rx={5} // Apply rounded corners to non-parent nodes
           stroke={white}
           onClick={() => {
             alert(`clicked: ${JSON.stringify(node.data.name)}`);
@@ -90,13 +118,13 @@ function Node({ node }) {
       )}
       <text
         dy=".33em"
-        fontSize={9}
+        fontSize={20}
         fontFamily="Arial"
         textAnchor="middle"
         style={{ pointerEvents: 'none' }}
         fill={white}
-        x={nodeWidth / 2}
-        y={nodeHeight / 2}
+        x={node.textX}
+        y={node.textY}
       >
         {node.data.name}
       </text>
@@ -121,7 +149,29 @@ export default function Dendrogram() {
     };
   }, []);
 
-  const data = useMemo(() => hierarchy(clusterData), []);
+  // Calculate node dimensions based on text content
+  const calculateNodeDimensions = (node) => {
+    const font = 20;
+    const textWidth = node.data.name.length * font * 0.6; // Adjust this multiplier as needed
+    const textHeight = font;
+    const padding = 10;
+
+    return {
+      width: textWidth + padding * 2,
+      height: textHeight + padding * 2,
+      textX: textWidth / 2 + padding,
+      textY: textHeight / 2 + padding,
+    };
+  };
+
+  const data = useMemo(() => hierarchy(clusterData).each((node) => {
+    const { width, height, textX, textY } = calculateNodeDimensions(node);
+    node.width = width;
+    node.height = height;
+    node.textX = textX;
+    node.textY = textY;
+  }), []);
+
   const xMax = width - defaultMargin.left - defaultMargin.right;
   const yMax = height - defaultMargin.top - defaultMargin.bottom;
 
@@ -137,14 +187,45 @@ export default function Dendrogram() {
                   key={`cluster-link-${i}`}
                   data={link}
                   stroke={storkColor}
-                  strokeWidth="1  "
-                  strokeOpacity={0.5}
+                  strokeWidth="5"
+                  strokeOpacity={0.7}
                   fill="none"
                 />
               ))}
-              {cluster.descendants().map((node, i) => (
-                <Node key={`cluster-node-${i}`} node={node} />
-              ))}
+              {cluster.descendants().map((node, i) => {
+                if (node.data.name === 'Common Node') {
+                  // Render the common "Common Node" differently
+                  return (
+                    <Group key={`cluster-node-${i}`} top={node.y} left={node.x}>
+                      <rect
+                        width={node.width}
+                        height={node.height}
+                        fill={nodecolor}
+                        rx={5}
+                        stroke={white}
+                        onClick={() => {
+                          alert(`clicked: ${JSON.stringify(node.data.name)}`);
+                        }}
+                      />
+                      <text
+                        dy=".33em"
+                        fontSize={20}
+                        fontFamily="Arial"
+                        textAnchor="middle"
+                        style={{ pointerEvents: 'none' }}
+                        fill={white}
+                        x={node.textX}
+                        y={node.textY}
+                      >
+                        {node.data.name}
+                      </text>
+                    </Group>
+                  );
+                } else {
+                  // Render other nodes as usual
+                  return <Node key={`cluster-node-${i}`} node={node} />;
+                }
+              })}
             </Group>
           )}
         </Cluster>
