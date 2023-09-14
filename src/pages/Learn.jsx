@@ -1,25 +1,8 @@
-import React from 'react';
-import '../css/Learn.css';
-
-const topics = [
-  {
-    id: 1,
-    name: "DSA"
-  },
-  {
-    id: 2,
-    name: "OOP"
-  },
-  // Add more topics as needed
-];
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css/Learn.css";
 
 function Learn() {
-  const topicDivs = topics.map((topic) => (
-    <div key={topic.id} className="topic">
-      {topic.name}
-    </div>
-  ));
-
   return (
     <div className="learn-container">
       <div className="head">
@@ -27,7 +10,18 @@ function Learn() {
       </div>
       <div className="topics">
         <div className="topic-container">
-          {topicDivs}
+          <Link to="/dsa" className="topic">
+            DSA
+          </Link>
+          <Link to="/oop" className="topic">
+            OOP
+          </Link>
+          <Link to="/javascript" className="topic">
+            Javascript
+          </Link>
+          <Link to="/clean-code" className="topic">
+            Clean Code
+          </Link>
         </div>
       </div>
     </div>
