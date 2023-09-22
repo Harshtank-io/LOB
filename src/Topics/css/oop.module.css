@@ -1,0 +1,46 @@
+/* CSS for OOP component */
+
+/* Header styles */
+.oop-h1 {
+  color: white;
+  text-align: center;
+  font-size: 50px; /* You can keep the font size as 50px */
+}
+
+/* Main container styles */
+.oop-container {
+  display: flex;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+/* Navigation sidebar styles */
+.index-oop {
+  position: fixed; 
+  width: 190px;
+  padding: 10px;
+  background: #2c343f;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.index-oop ul{
+  
+}
+/* Content container styles */
+.oop {
+  margin-right: 10px;
+  padding: 10px 20px;
+  margin-left: 220px; 
+  width: 100%; /* Make the content container take the remaining width */
+}
+
+/* Section styles */
+.oop h2 {
+  color: white;
+  font-size: 50px;
+  margin: 0;
+}
