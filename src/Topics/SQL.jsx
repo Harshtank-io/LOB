@@ -29,7 +29,7 @@ function SQL() {
     <>
       <div className={styles["container"]}>
         <div className={styles["index"]}>
-        <BackButton />
+          <BackButton />
           <ul>
             {sqlData.sql_concepts.map((section) => (
               <li key={section.id}>
@@ -39,7 +39,6 @@ function SQL() {
           </ul>
         </div>
         <div className={styles["content"]}>
-          
           {sqlData.sql_concepts.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.title}</h2>

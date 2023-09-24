@@ -30,6 +30,7 @@ function OOP() {
     <>
       <div className={styles["oop-container"]}>
         <div className={styles["index-oop"]}>
+          <BackButton/>
           <ul>
             {oopData.oop_concepts.map((section) => (
               <li key={section.id}>

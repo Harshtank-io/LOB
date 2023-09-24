@@ -29,6 +29,7 @@ function DSA() {
     <>
       <div className={styles["container"]}>
         <div className={styles["index"]}>
+          <BackButton />
           <ul>
             {dsaData.dsa_concepts.map((section) => (
               <li key={section.id}>
@@ -38,7 +39,6 @@ function DSA() {
           </ul>
         </div>
         <div className={styles["content"]}>
-          <BackButton />
           {dsaData.dsa_concepts.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.title}</h2>
