@@ -7,6 +7,7 @@ import Services from "../pages/Service";
 import Learn from "../pages/Learn";
 import DSA from "../Topics/DSA";
 import OOP from "../Topics/OOP";
+import SQL from "../Topics/SQL";
 
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
       <Route path="/learn" element={<Learn />} />
       <Route path="/dsa" element={<DSA />} />
       <Route path="/oop" element={<OOP />} />
+      <Route path="/sql" element={<SQL/>}/>
     </Routes>
   );
 }

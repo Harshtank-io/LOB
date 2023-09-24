@@ -16,8 +16,8 @@ function Learn() {
           <Link to="/oop" className="topic">
             OOP
           </Link>
-          <Link to="/javascript" className="topic">
-            Javascript
+          <Link to="/SQL" className="topic">
+            SQL
           </Link>
           <Link to="/clean-code" className="topic">
             Clean Code

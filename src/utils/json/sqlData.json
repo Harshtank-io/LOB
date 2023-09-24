@@ -1,0 +1,77 @@
+{
+    "sql_concepts": [
+      {
+        "id": "database",
+        "title": "Databases",
+        "content": "A database is a structured collection of data. It is organized in tables, where each table contains rows and columns. Databases are used for storing and managing structured information efficiently.",
+        "code_example": {
+          "code": "-- SQL code to create a sample database\nCREATE DATABASE SampleDB;",
+          "output": null
+        }
+      },
+      {
+        "id": "table",
+        "title": "Tables",
+        "content": "Tables are the basic building blocks of a database. They consist of rows and columns, where each column represents a specific attribute, and each row contains data related to those attributes.",
+        "code_example": {
+          "code": "-- SQL code to create a sample table\nCREATE TABLE Students (\n    StudentID INT PRIMARY KEY,\n    FirstName VARCHAR(50),\n    LastName VARCHAR(50),\n    Age INT\n);",
+          "output": null
+        }
+      },
+      {
+        "id": "query",
+        "title": "SQL Queries",
+        "content": "SQL queries are used to retrieve, manipulate, and manage data in a database. Common SQL operations include SELECT (retrieve data), INSERT (add data), UPDATE (modify data), and DELETE (remove data).",
+        "code_example": {
+          "code": "-- SQL code to retrieve data from a table\nSELECT FirstName, LastName FROM Students;",
+          "output": null
+        }
+      },
+      {
+        "id": "primary_key",
+        "title": "Primary Keys",
+        "content": "A primary key is a unique identifier for each row in a table. It ensures that each record is unique and can be used to reference specific rows in other tables.",
+        "code_example": {
+          "code": "-- SQL code to define a primary key in a table\nALTER TABLE Students\nADD PRIMARY KEY (StudentID);",
+          "output": null
+        }
+      },
+      {
+        "id": "foreign_key",
+        "title": "Foreign Keys",
+        "content": "A foreign key is a column or a set of columns in a table that is used to establish a link between data in two tables. It enforces referential integrity between related tables.",
+        "code_example": {
+          "code": "-- SQL code to define a foreign key in a table\nALTER TABLE Enrollments\nADD FOREIGN KEY (StudentID) REFERENCES Students(StudentID);",
+          "output": null
+        }
+      },
+      {
+        "id": "index",
+        "title": "Indexes",
+        "content": "Indexes in SQL are data structures that improve the speed of data retrieval operations on a table. They provide quick access to specific rows based on the indexed columns.",
+        "code_example": {
+          "code": "-- SQL code to create an index on a table\nCREATE INDEX idx_LastName ON Students(LastName);",
+          "output": null
+        }
+      },
+      {
+        "id": "joins",
+        "title": "Joins",
+        "content": "SQL joins are used to combine rows from two or more tables based on a related column between them. Common types of joins include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN.",
+        "code_example": {
+          "code": "-- SQL code for an INNER JOIN\nSELECT Students.FirstName, Enrollments.CourseName\nFROM Students\nINNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;",
+          "output": null
+        }
+      },
+      {
+        "id": "transactions",
+        "title": "Transactions",
+        "content": "Transactions in SQL are sequences of one or more SQL statements that are executed as a single unit of work. They ensure the integrity of the database by allowing you to commit or rollback changes.",
+        "code_example": {
+          "code": "-- SQL code to start a transaction\nBEGIN TRANSACTION;\n-- SQL statements here\nCOMMIT; -- or ROLLBACK;",
+          "output": null
+        }
+      }
+    ]
+  }
+

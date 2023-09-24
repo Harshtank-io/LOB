@@ -4,14 +4,13 @@
 }
 @font-face {
   font-family: "Maven";
-  src: url(../src/fonts/MavenPro-VariableFont_wght.ttf);
+  src: url(../src/utils/fonts/MavenPro-VariableFont_wght.ttf);
 }
 
-*{
+* {
   scroll-behavior: smooth;
 }
 body {
   background: rgb(14, 25, 36);
   margin: 0;
-
 }

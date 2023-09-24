@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import styles from "./css/oop.module.css";
-import Footer from "../components/Footer";
-import oopData from "../utils/json/oopData.json";
+import styles from "./css/common.module.css";
+import sqlData from "../utils/json/sqlData.json";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { BackButton } from "../components/BackButton";
 
-function OOP() {
+function SQL() {
   const [copyState, setCopyState] = useState({});
 
   const copyToClipboard = (code, id) => {
@@ -14,7 +13,7 @@ function OOP() {
     setCopyState({ ...copyState, [id]: true });
     setTimeout(() => {
       setCopyState({ ...copyState, [id]: false });
-    }, 2000); // Hide the message after 2 seconds
+    }, 2000);
   };
 
   const codeBlockStyles = {
@@ -28,19 +27,20 @@ function OOP() {
 
   return (
     <>
-      <div className={styles["oop-container"]}>
-        <div className={styles["index-oop"]}>
+      <div className={styles["container"]}>
+        <div className={styles["index"]}>
+        <BackButton />
           <ul>
-            {oopData.oop_concepts.map((section) => (
+            {sqlData.sql_concepts.map((section) => (
               <li key={section.id}>
                 <a href={`#${section.id}`}>{section.title}</a>
               </li>
             ))}
           </ul>
         </div>
-        <div className={styles["oop"]}>
-          <BackButton />
-          {oopData.oop_concepts.map((section) => (
+        <div className={styles["content"]}>
+          
+          {sqlData.sql_concepts.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.title}</h2>
               <p>{section.content}</p>
@@ -64,6 +64,7 @@ function OOP() {
               </div>
               {section.code_example.code && (
                 <SyntaxHighlighter
+                  language="sql"
                   style={atomOneDark}
                   customStyle={codeBlockStyles}
                   wrapLongLines={true}
@@ -85,11 +86,10 @@ function OOP() {
               )}
             </section>
           ))}
-          {/* <Footer /> */}
         </div>
       </div>
     </>
   );
 }
 
-export default OOP;
+export default SQL;

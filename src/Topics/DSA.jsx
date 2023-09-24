@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import styles from "./css/dsa.module.css";
-import dsaData from "./json/dsaData.json";
+import styles from "./css/common.module.css";
+import dsaData from "../utils/json/dsaData.json";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { useNavigate } from "react-router-dom"; // Import useHistory from React Router
+import { BackButton } from "../components/BackButton";
 
 function DSA() {
-  const navigate = useNavigate();
-
   const [copyState, setCopyState] = useState({});
 
   const copyToClipboard = (code, id) => {
@@ -27,13 +25,10 @@ function DSA() {
     fontSize: "1rem",
   };
 
-  const goBack = () => {
-    navigate(-1); // Use navigate to go back
-  };
   return (
     <>
-      <div className={styles["dsa-container"]}>
-        <div className={styles["index-dsa"]}>
+      <div className={styles["container"]}>
+        <div className={styles["index"]}>
           <ul>
             {dsaData.dsa_concepts.map((section) => (
               <li key={section.id}>
@@ -42,10 +37,8 @@ function DSA() {
             ))}
           </ul>
         </div>
-        <div className={styles["dsa"]}>
-          <button className="backButton" onClick={goBack}>
-            Go Back
-          </button>
+        <div className={styles["content"]}>
+          <BackButton />
           {dsaData.dsa_concepts.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.title}</h2>
