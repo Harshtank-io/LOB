@@ -1,0 +1,77 @@
+{
+  "oop_concepts": [
+    {
+      "id": "overview",
+      "title": "What is OOP?",
+      "content": "Object-Oriented Programming (OOP) is a programming paradigm that uses classes and objects as fundamental building blocks. OOP allows you to create reusable code blocks called objects. It encourages breaking down complex systems into smaller, manageable parts, making code more understandable and maintainable.",
+      "code_example": {
+        "code": null,
+        "output": null
+      }
+    },
+    {
+      "id": "class",
+      "title": "Classes",
+      "content": "A class is a derived datatype that combines members of different datatypes into one. Classes are used to define the blueprint for creating objects.",
+      "code_example": {
+        "code": "class Car{\n   String company;\n   String model;\n   double price; \n   .......\n}",
+        "output": null
+      }
+    },
+    {
+      "id": "object",
+      "title": "Objects",
+      "content": "An object is an instance of a class and has both state (attributes) and behavior (methods). Objects are created based on the class blueprint.",
+      "code_example": {
+        "code": null,
+        "output": null
+      }
+    },
+    {
+      "id": "encapsulation",
+      "title": "Encapsulation",
+      "content": "Encapsulation is a core principle of OOP that involves bundling data (attributes) and methods (functions) into a single unit called a class. This concept protects the internal state of an object from external access, promoting data integrity and code organization.",
+      "code_example": {
+        "code": "public class Circle {\n    private double radius;\n\n    public Circle(double radius) {\n        this.radius = radius;\n    }\n\n    public double area() {\n        return 3.14 * radius * radius;\n    }\n}",
+        "output": "Encapsulation helps maintain the integrity of the Circle's 'radius' attribute by restricting direct access from outside the class. The 'area' method calculates and returns the area of the circle based on the encapsulated 'radius'."
+      }
+    },
+    {
+      "id": "inheritance",
+      "title": "Inheritance",
+      "content": "Inheritance allows you to create a new class (subclass) by inheriting properties and behaviors from an existing class (superclass). It promotes code reuse and the creation of a hierarchy of classes, enhancing extensibility and maintainability.",
+      "types": {
+        "single": "Single Inheritance: A subclass inherits from a single superclass.",
+        "multiple": "Multiple Inheritance: A subclass inherits from multiple superclasses (not supported in all programming languages).",
+        "multilevel": "Multilevel Inheritance: A subclass inherits from another subclass, creating a chain of inheritance.",
+        "hierarchical": "Hierarchical Inheritance: Multiple subclasses inherit from a single superclass."
+      },
+      "code_example": {
+        "code": "public class Animal {\n    private String name;\n\n    public Animal(String name) {\n        this.name = name;\n    }\n\n    public void speak() {\n        // Base class method\n    }\n}\n\npublic class Dog extends Animal {\n    public Dog(String name) {\n        super(name);\n    }\n\n    public void speak() {\n        System.out.println(\"Woof!\");\n    }\n}\n\npublic class Cat extends Animal {\n    public Cat(String name) {\n        super(name);\n    }\n\n    public void speak() {\n        System.out.println(\"Meow!\");\n    }\n}",
+        "output": "Inheritance allows 'Dog' and 'Cat' subclasses to inherit the 'name' attribute and 'speak' method from the 'Animal' superclass. This promotes code reuse and enables specialized behavior in subclasses."
+      }
+    },
+    {
+      "id": "polymorphism",
+      "title": "Polymorphism",
+      "content": "Polymorphism enables objects of different classes to be treated as objects of a common superclass. It allows for dynamic method invocation based on the actual type of the object, promoting flexibility and code reusability.",
+      "types": {
+        "compile-time": "Compile-Time Polymorphism (Method Overloading): Multiple methods in the same class with the same name but different parameter lists.",
+        "runtime": "Runtime Polymorphism (Method Overriding): A subclass provides a specific implementation of a method defined in its superclass."
+      },
+      "code_example": {
+        "code": "Animal[] animals = {new Dog(\"Buddy\"), new Cat(\"Whiskers\")};\n\nfor (Animal animal : animals) {\n    animal.speak();\n}",
+        "output": "Polymorphism allows 'Dog' and 'Cat' objects to be treated as 'Animal' objects in the array. During iteration, the 'speak' method of each object is invoked based on its actual type, demonstrating dynamic method dispatch."
+      }
+    },
+    {
+      "id": "abstraction",
+      "title": "Abstraction",
+      "content": "Abstraction involves simplifying complex reality by modeling classes based on real-world entities. It focuses on what an object does rather than how it does it. Abstract classes and methods provide a blueprint for concrete classes, promoting code structure and consistency.",
+      "code_example": {
+        "code": "public abstract class Shape {\n    public abstract double area();\n}\n\npublic class Rectangle extends Shape {\n    private double length;\n    private double width;\n\n    public Rectangle(double length, double width) {\n        this.length = length;\n        this.width = width;\n    }\n\n    @Override\n    public double area() {\n        return length * width;\n    }\n}",
+        "output": "Abstraction defines the 'Shape' abstract class with an abstract 'area' method, representing a common behavior for all shapes. The 'Rectangle' class extends 'Shape' and provides a concrete implementation of 'area', demonstrating abstraction in action."
+      }
+    }
+  ]
+}

@@ -1,88 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./css/oop.module.css";
 import Footer from "../components/Footer";
+import oopData from "./json/oopData.json";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function OOP() {
+  const [copyState, setCopyState] = useState({});
+
+  const copyToClipboard = (code, id) => {
+    navigator.clipboard.writeText(code);
+    setCopyState({ ...copyState, [id]: true });
+    setTimeout(() => {
+      setCopyState({ ...copyState, [id]: false });
+    }, 2000); // Hide the message after 2 seconds
+  };
+
+  const codeBlockStyles = {
+    display: "block",
+    backgroundColor: "#000",
+    padding: "1rem",
+    borderRadius: "5px",
+    border: "1px solid #ddd",
+    fontSize: "1rem",
+  };
+
   return (
     <>
-    
       <div className={styles["oop-container"]}>
         <div className={styles["index-oop"]}>
           <ul>
-            <li>
-              <a href="#overview">Overview</a>
-            </li>
-            <li>
-              <a href="#encapsulation">Encapsulation</a>
-            </li>
-            <li>
-              <a href="#inheritance">Inheritance</a>
-            </li>
-            <li>
-              <a href="#polymorphism">Polymorphism</a>
-            </li>
-            <li>
-              <a href="#abstraction">Abstraction</a>
-            </li>
+            {oopData.oop_concepts.map((section) => (
+              <li key={section.id}>
+                <a href={`#${section.id}`}>{section.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className={styles["oop"]}>
-        <h1 className={styles["oop-h1"]}>OOP Concepts</h1>
-          <section id="overview">
-            <h2>What is OOP? </h2>
-            <p>
-              As the name suggests, Object-Oriented Programming or OOPs refers
-              to languages that use objects in programming, they use objects as
-              a primary source to implement what is to happen in the code.
-              Objects are seen by the viewer or user, performing tasks assigned
-              by you. Object-oriented programming aims to implement real-world
-              entities like inheritance, hiding, polymorphism etc. in
-              programming. The main aim of OOP is to bind together the data and
-              the functions that operate on them so that no other part of the
-              code can access this data except that function.
-            </p>
-          </section>
-
-          <section id="encapsulation">
-            <h2>Encapsulation</h2>
-            <p>
-              Encapsulation is one of the core principles of OOP, which involves
-              bundling data (attributes) and methods (functions) that operate on
-              the data into a single unit called a class.
-            </p>
-          </section>
-
-          <section id="inheritance">
-            <h2>Inheritance</h2>
-            <p>
-              Inheritance allows you to create a new class by inheriting
-              properties and behaviors from an existing class. It promotes code
-              reuse and the creation of a hierarchy of classes.
-            </p>
-          </section>
-
-          <section id="polymorphism">
-            <h2>Polymorphism</h2>
-            <p>
-              Polymorphism allows objects of different classes to be treated as
-              objects of a common superclass. It enables you to write code that
-              can work with objects in a more generic way.
-            </p>
-          </section>
-
-          <section id="abstraction">
-            <h2>Abstraction</h2>
-            <p>
-              Abstraction involves simplifying complex reality by modeling
-              classes based on real-world entities and exposing only the
-              necessary features while hiding implementation details.
-            </p>
-          </section>
-          <Footer/> 
          
+          {oopData.oop_concepts.map((section) => (
+            <section key={section.id} id={section.id}>
+              <h2>{section.title}</h2>
+              <p>{section.content}</p>
+              <div>
+                {section.code_example.code && (
+                  <div>
+                    {copyState[section.id] ? (
+                      <span>Copied!</span>
+                    ) : (
+                      <button
+                        onClick={() =>
+                          copyToClipboard(
+                            section.code_example.code,
+                            section.id
+                          )
+                        }
+                        className={styles["copy-button"]}
+                      >
+                        {copyState[section.id] ? "Copied!" : "Copy"}
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+              {section.code_example.code && (
+                <SyntaxHighlighter
+                  style={atomOneDark}
+                  customStyle={codeBlockStyles}
+                  wrapLongLines={true}
+                >
+                  {section.code_example.code}
+                </SyntaxHighlighter>
+              )}
+              {section.code_example.output && (
+                <div>
+                  Output
+                  <SyntaxHighlighter
+                    style={atomOneDark}
+                    customStyle={codeBlockStyles}
+                    wrapLongLines={true}
+                  >
+                    {section.code_example.output}
+                  </SyntaxHighlighter>
+                </div>
+              )}
+            </section>
+          ))}
+          {/* <Footer /> */}
         </div>
       </div>
-      
     </>
   );
 }

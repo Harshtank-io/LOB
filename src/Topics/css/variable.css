@@ -1,0 +1,12 @@
+/* variables.css */
+:root {
+    --main-bg-color: #2c343f;
+    --main-text-color: white;
+    --font-size-large: 50px;
+    --font-size-medium: 20px;
+    --font-size-small: 1.2rem;
+    --border-radius: 5px;
+    --padding-small: 10px;
+    --padding-medium: 20px;
+  }
+  

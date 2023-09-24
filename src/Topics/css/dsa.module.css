@@ -1,20 +1,20 @@
-/* OOP component CSS */
-@import './variable.css';
+/* DSA component CSS */
+@import "./variable.css";
 
-.oop-h1 {
+.dsa-h1 {
   color: var(--main-text-color);
   text-align: center;
   font-size: var(--font-size-large);
 }
 
-.oop-container {
+.dsa-container {
   display: flex;
   color: var(--main-text-color);
   margin-left: auto;
   margin-right: auto;
 }
 
-.index-oop {
+.index-dsa {
   position: fixed;
   width: 200px;
   padding: var(--padding-small);
@@ -25,16 +25,16 @@
   overflow-y: auto;
 }
 
-.index-oop ul {
+.index-dsa ul {
   list-style: none;
   padding: 0;
 }
 
-.index-oop ul li {
+.index-dsa ul li {
   margin-bottom: var(--padding-small);
 }
 
-.index-oop ul li a {
+.index-dsa ul li a {
   text-decoration: none;
   color: var(--main-text-color);
   font-weight: bold;
@@ -44,19 +44,19 @@
   transition: background-color 0.3s ease;
 }
 
-.index-oop ul li a:hover {
+.index-dsa ul li a:hover {
   background-color: #39444e;
   border-radius: var(--border-radius);
 }
 
-.oop {
+.dsa {
   margin-right: var(--padding-small);
   padding: var(--padding-small) var(--padding-medium);
   margin-left: 220px;
   width: 100%;
 }
 
-.oop h2 {
+.dsa h2 {
   color: var(--main-text-color);
   font-size: var(--font-size-large);
   margin: 0;
@@ -78,17 +78,17 @@ p {
 }
 
 @media screen and (max-width: 768px) {
-  .oop-container {
+  .dsa-container {
     flex-direction: column;
   }
 
-  .index-oop {
+  .index-dsa {
     position: static;
     width: auto;
     margin: var(--padding-medium);
   }
 
-  .oop {
+  .dsa {
     width: auto;
     margin: 0;
   }
