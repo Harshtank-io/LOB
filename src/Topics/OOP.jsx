@@ -5,32 +5,14 @@ import oopData from "../utils/json/oopData.json";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { BackButton } from "../components/BackButton";
-
+import CopyButton from "../components/CopyButton";
+import codeBlockStyles from "./const/codeBlockstyle";
 function OOP() {
-  const [copyState, setCopyState] = useState({});
-
-  const copyToClipboard = (code, id) => {
-    navigator.clipboard.writeText(code);
-    setCopyState({ ...copyState, [id]: true });
-    setTimeout(() => {
-      setCopyState({ ...copyState, [id]: false });
-    }, 2000); // Hide the message after 2 seconds
-  };
-
-  const codeBlockStyles = {
-    display: "block",
-    backgroundColor: "#000",
-    padding: "1rem",
-    borderRadius: "5px",
-    border: "1px solid #ddd",
-    fontSize: "1rem",
-  };
-
   return (
     <>
       <div className={styles["oop-container"]}>
         <div className={styles["index-oop"]}>
-          <BackButton/>
+          <BackButton />
           <ul>
             {oopData.oop_concepts.map((section) => (
               <li key={section.id}>
@@ -40,27 +22,16 @@ function OOP() {
           </ul>
         </div>
         <div className={styles["oop"]}>
-          <BackButton />
           {oopData.oop_concepts.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.title}</h2>
               <p>{section.content}</p>
               <div>
                 {section.code_example.code && (
-                  <div>
-                    {copyState[section.id] ? (
-                      <span>Copied!</span>
-                    ) : (
-                      <button
-                        onClick={() =>
-                          copyToClipboard(section.code_example.code, section.id)
-                        }
-                        className={styles["copy-button"]}
-                      >
-                        {copyState[section.id] ? "Copied!" : "Copy"}
-                      </button>
-                    )}
-                  </div>
+                  <CopyButton
+                    code={section.code_example.code}
+                    id={section.id}
+                  />
                 )}
               </div>
               {section.code_example.code && (

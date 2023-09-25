@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Group } from '@visx/group';
 import { Cluster, hierarchy } from '@visx/hierarchy';
-import { HierarchyPointNode } from '@visx/hierarchy/lib/types';
+// import { HierarchyPointNode } from '@visx/hierarchy/lib/types';
 import { LinkVertical } from '@visx/shape';
 import '../css/Service.css';
 

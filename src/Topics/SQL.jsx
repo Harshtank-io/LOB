@@ -4,27 +4,10 @@ import sqlData from "../utils/json/sqlData.json";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { BackButton } from "../components/BackButton";
+import CopyButton from "../components/CopyButton";
+import codeBlockStyles from "./const/codeBlockstyle";
 
 function SQL() {
-  const [copyState, setCopyState] = useState({});
-
-  const copyToClipboard = (code, id) => {
-    navigator.clipboard.writeText(code);
-    setCopyState({ ...copyState, [id]: true });
-    setTimeout(() => {
-      setCopyState({ ...copyState, [id]: false });
-    }, 2000);
-  };
-
-  const codeBlockStyles = {
-    display: "block",
-    backgroundColor: "#000",
-    padding: "1rem",
-    borderRadius: "5px",
-    border: "1px solid #ddd",
-    fontSize: "1rem",
-  };
-
   return (
     <>
       <div className={styles["container"]}>
@@ -45,20 +28,10 @@ function SQL() {
               <p>{section.content}</p>
               <div>
                 {section.code_example.code && (
-                  <div>
-                    {copyState[section.id] ? (
-                      <span>Copied!</span>
-                    ) : (
-                      <button
-                        onClick={() =>
-                          copyToClipboard(section.code_example.code, section.id)
-                        }
-                        className={styles["copy-button"]}
-                      >
-                        {copyState[section.id] ? "Copied!" : "Copy"}
-                      </button>
-                    )}
-                  </div>
+                  <CopyButton
+                    code={section.code_example.code}
+                    id={section.id}
+                  />
                 )}
               </div>
               {section.code_example.code && (

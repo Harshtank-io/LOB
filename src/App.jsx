@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <AppRoutes /> {/* Use the routes component */}
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </>
   );
