@@ -27,12 +27,12 @@
   font-weight: 400;
 }
 
-.info-image {
+.info-img {
   display: flex;
   align-items: center;
 }
 
-.info-image img {
+.info-img img {
   max-width: 100%;
   height: auto;
 }
