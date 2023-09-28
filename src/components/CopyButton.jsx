@@ -12,7 +12,7 @@ function CopyButton({ code, id }) {
   };
 
   const buttonStyles = {
-    backgroundColor: "#007bff",
+    backgroundColor: "#570AD5",
     color: "#fff",
     padding: "0.5rem 1rem",
     border: "none",

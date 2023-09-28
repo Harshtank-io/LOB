@@ -8,6 +8,7 @@ import Learn from "../pages/Learn";
 import DSA from "../Topics/DSA";
 import OOP from "../Topics/OOP";
 import SQL from "../Topics/SQL";
+import SignUp from "../pages/SignUp";
 
 function AppRoutes() {
   return (
@@ -16,10 +17,12 @@ function AppRoutes() {
       <Route path="/services" element={<Services />} />
       <Route path="/about" element={<About />} />
       <Route path="/product" element={<Product />} />
+      <Route path="/signup" element={<SignUp />} />
+
       <Route path="/learn" element={<Learn />} />
       <Route path="/dsa" element={<DSA />} />
       <Route path="/oop" element={<OOP />} />
-      <Route path="/sql" element={<SQL/>}/>
+      <Route path="/sql" element={<SQL />} />
     </Routes>
   );
 }

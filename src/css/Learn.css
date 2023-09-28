@@ -1,34 +1,47 @@
-
-.learn-container{
-    color: white;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
+.learn-container {
+  color: white;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
 }
 
-ul{
+ul {
   color: aliceblue;
 }
-.head{
-    text-align: center;
-    font-size: 30px;
+.head {
+  text-align: center;
+  font-size: 30px;
 }
- .topic {
-    font-size: 20px;
-    display: flex;
-    justify-content: space-around;
-    border: white solid;
-    padding: 10px;
-    margin: 5px; 
-    cursor: pointer;
-    background-color: rgb(44, 52, 63);
-    padding: 20px;
-    border-radius: 5px;
-    border-style: solid;
-    color: white;
-    text-align: center;
-    font-size: 25px;
+.topic {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  border: white solid;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: rgb(44, 52, 63);
+  padding: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+   text-decoration: none; 
+}
 
-  }
-  
+
+.topic-container > .topic {
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Add a smooth background color transition */
+
+}
+
+.topic-container > .topic:hover {
+  background-color: rgb(87, 10, 213);; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+

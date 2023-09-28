@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "../css/Learn.css";
 
 function Learn() {
+  const topics = [
+    { name: "Data Structure & Algorithm", path: "/dsa" },
+    { name: "Object-oriented programming", path: "/oop" },
+    { name: "SQL", path: "/sql" },
+  ];
   return (
     <div className="learn-container">
       <div className="head">
@@ -10,18 +15,11 @@ function Learn() {
       </div>
       <div className="topics">
         <div className="topic-container">
-          <Link to="/dsa" className="topic">
-            DSA
-          </Link>
-          <Link to="/oop" className="topic">
-            OOP
-          </Link>
-          <Link to="/SQL" className="topic">
-            SQL
-          </Link>
-          <Link to="/clean-code" className="topic">
-            Clean Code
-          </Link>
+          {topics.map((topic) => (
+            <Link key={topic.path} to={topic.path} className="topic">
+              {topic.name}
+            </Link>
+          ))}
         </div>
       </div>
     </div>

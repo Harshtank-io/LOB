@@ -10,7 +10,7 @@ export function BackButton() {
   };
 
   const buttonStyle = {
-    backgroundColor: "#007bff", // Change the background color as needed
+    backgroundColor: "#570AD5", // Change the background color as needed
     color: "#fff", // Text color
     border: "none",
     borderRadius: "4px",
