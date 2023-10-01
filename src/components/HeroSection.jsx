@@ -1,15 +1,17 @@
 import React from "react";
-import arrow from '../assets/arrow.svg';
+import arrow from "../assets/arrow.svg";
 import "../css/HeroSection.css";
-import Lottie from 'lottie-react';
-import animationData from '../assets/building.json';
+import Lottie from "lottie-react";
+import animationData from "../assets/building.json";
 
 function HeroSection() {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     const query = event.target.search.value;
     if (query) {
-      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
+        query
+      )}`;
     }
   };
 
@@ -19,11 +21,19 @@ function HeroSection() {
         <div className="text">
           <h1>Lines Of Binary</h1>
           <h3>
-            Learning is the process of acquiring knowledge, skills, understanding, or competence in a particular subject, field, or discipline. It is a lifelong journey that encompasses various forms of gaining information and expertise.
+            Learning is the process of acquiring knowledge, skills,
+            understanding, or competence in a particular subject, field, or
+            discipline. It is a lifelong journey that encompasses various forms
+            of gaining information and expertise.
           </h3>
         </div>
         <form onSubmit={handleSearchSubmit}>
-          <input type="text" name="search" id="search" placeholder="What You want to Learn" />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="What You want to Learn"
+          />
           <button>
             <img src={arrow} alt="Search" loading="lazy" />
           </button>
@@ -38,4 +48,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-  

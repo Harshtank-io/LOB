@@ -5,7 +5,7 @@ export default function Me() {
     <>
       <div className="me-container">
         <div className="me-img">
-          <img src={me} />
+          <img src={me} loading="lazy" alt="Harsh" />
         </div>
         <div className="me-text">
           <h1>Kown Me!!</h1>

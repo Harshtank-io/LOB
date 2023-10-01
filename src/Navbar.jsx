@@ -6,7 +6,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(false);  
   const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
