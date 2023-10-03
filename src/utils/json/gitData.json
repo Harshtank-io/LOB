@@ -1,0 +1,229 @@
+{
+    "git_commands":[
+        {
+            "id": "git init",
+            "title": "git init",
+            "content": "The first step in versioning your project with Git. This command initializes a new Git repository in your directory.",
+            "code_example": {
+              "code": "git init",
+              "output": null
+            }
+          },
+          {
+            "id":"git clone",
+            "title":"git clone",
+            "content": "Use this command to create a local copy of an existing Git repository.",
+            "code_example":{
+                "code":"git clone <repository_URL>",
+                "output":null
+            }
+          },
+          {
+            "id":"git add",
+            "title":"git add",
+            "content": "Add changes to your upcoming commit. You can specify individual files or use git add . to add all modified files.",
+            "code_example":{
+                "code":"git add <file_name> or git add . ",
+                "output":null
+            }
+          },
+          {
+            "id":"git commit",
+            "title":"git commit",
+            "content": "Record changes in your repository with a descriptive message.",
+            "code_example":{
+                "code":"git commit -m \"commit message\"",
+                "output":null
+            }
+          },
+          {
+            "id":"git pull",
+            "title":"git pull",
+            "content": "Update your local repository with changes from the remote repository",
+            "code_example":{
+                "code":"git pull",
+                "output":null
+            }
+          },
+          {
+            "id":"git push",
+            "title":"git push",
+            "content": "Send your local changes to the remote repository.",
+            "code_example":{
+                "code":"git push",
+                "output":null
+            }
+          },
+          {
+            "id":"git branch",
+            "title":"git branch",
+            "content": "List all branches in your repository and show the currently checked-out branch.",
+            "code_example":{
+                "code":"git branch",
+                "output":null
+            }
+          },
+          {
+            "id":"git checkout",
+            "title":"git checkout",
+            "content": "Swtich between branches or create a new branch.",
+            "code_example":{
+                "code":"git checkout <branch_name>",
+                "output":null
+            }
+          },
+          {
+            "id":"git merge",
+            "title":"git merge",
+            "content": "combine changes from one branch into another.",
+            "code_example":{
+                "code":"git merge <branch_name>",
+                "output":null
+            }
+          },
+          {
+            "id":"git log",
+            "title":"git log",
+            "content": "view the commit history of the repository.",
+            "code_example":{
+                "code":"git log",
+                "output":null
+            }
+          },
+          {
+            "id":"git stash",
+            "title":"git stash",
+            "content": "Temporarily stash uncommitted changes.",
+            "code_example":{
+                "code":"git stash",
+                "output":null
+            }
+          },
+          {
+            "id":"git reset",
+            "title":"git reset",
+            "content": "Undo changes it the repository.",
+            "code_example":{
+                "code":"git reset",
+                "output":null
+            }
+          },
+          {
+            "id":"git remote",
+            "title":"git remote",
+            "content": "List configured remote repositories.",
+            "code_example":{
+                "code":"git remote",
+                "output":null
+            }
+          },
+          {
+            "id":"git fetch",
+            "title":"git fetch",
+            "content": "Download information from the remote repository but do not automatically merge.",
+            "code_example":{
+                "code":"git fetch",
+                "output":null
+            }
+          },
+          {
+            "id":"git rebase",
+            "title":"git rebase",
+            "content": "Rearrange commits for a cleaner timeline.",
+            "code_example":{
+                "code":"git rebase <branch_name>",
+                "output":null
+            }
+          },
+          {
+            "id":"git tag",
+            "title":"git tag",
+            "content": "Mark commits for specific version of your projects.",
+            "code_example":{
+                "code":"git tag <tag_name>",
+                "output":null
+            }
+          },
+          {
+            "id":"git status",
+            "title":"git status",
+            "content": "Checks the state of your repository, including modified and untracked files.",
+            "code_example":{
+                "code":"git status",
+                "output":null
+            }
+          },
+          {
+            "id":"git diff",
+            "title":"git diff",
+            "content": "Display the difference between files in your working directory and the staging area.",
+            "code_example":{
+                "code":"git diff",
+                "output":null
+            }
+          },
+          {
+            "id":"git remote add" ,
+            "title":"git remote add",
+            "content": "Add a new remote repository to your Git configuration.",
+            "code_example":{
+                "code":"git remote add <remote_name> <remote_URL>",
+                "output":null
+            }
+          },
+          {
+            "id":"git remote remove",
+            "title":"git remote remove",
+            "content": "Remove a remote repository from the your Git configuration.",
+            "code_example":{
+                "code":"git remote remove <remote_name>",
+                "output":null
+            }
+          },
+          {
+            "id":"git rebase -i",
+            "title":"git rebase -i",
+            "content": "Perform an interactive to rearrange, edit or merge commits.",
+            "code_example":{
+                "code":"git rebase -i <commit_hash>",
+                "output":null
+            }
+          },
+          {
+            "id":"git cherry-pick",
+            "title":"git cherry-pick",
+            "content": "Apply a specific commit from one branch to another.",
+            "code_example":{
+                "code":"git cherry-pick <commit_hash>",
+                "output":null
+            }
+          },
+          {
+            "id":"git log --graph",
+            "title":"git log --graph",
+            "content": "Visualize the commit history graphically, showing branches.",
+            "code_example":{
+                "code":"git log --graph",
+                "output":null
+            }
+          },
+          {
+            "id":"git clean",
+            "title":"git clean",
+            "content": "Remove untracked files from the working directory.",
+            "code_example":{
+                "code":"git clean -n # show files to be removed (dry run mode) \ngit clean -f # Remove untracked files (with caution!)",
+                "output":null
+            }
+          },
+          {
+            "id":"git submodule",
+            "title":"git submodule",
+            "content": "Manage Git submodule within your main repository .",
+            "code_example":{
+                "code":"git submodule add <submodule_URL> <local_path>",
+                "output":null
+            }
+          }
+    ]
+}

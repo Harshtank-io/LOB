@@ -8,6 +8,7 @@ import Learn from "../pages/Learn";
 import DSA from "../Topics/DSA";
 import OOP from "../Topics/OOP";
 import SQL from "../Topics/SQL";
+import Git from "../Topics/Git";
 import SignUp from "../pages/SignUp";
 
 function AppRoutes() {
@@ -23,6 +24,7 @@ function AppRoutes() {
       <Route path="/dsa" element={<DSA />} />
       <Route path="/oop" element={<OOP />} />
       <Route path="/sql" element={<SQL />} />
+      <Route path="/git" element={<Git />} />
     </Routes>
   );
 }

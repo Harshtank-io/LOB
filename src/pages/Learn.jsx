@@ -7,6 +7,7 @@ function Learn() {
     { name: "Data Structure & Algorithm", path: "/dsa" },
     { name: "Object-oriented programming", path: "/oop" },
     { name: "SQL", path: "/sql" },
+    { name: "All the Git Commands You Need to Know", path: "/git" },
   ];
   return (
     <div className="learn-container">
