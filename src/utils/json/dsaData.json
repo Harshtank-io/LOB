@@ -10,8 +10,8 @@
         }
       },
       {
-        "id": "linked_lists",
-        "title": "Linked Lists",
+        "id": "linked_list",
+        "title": "Linked List",
         "content": "A linked list is a linear data structure where elements are connected using pointers. Each element (node) has a value and a reference to the next node, allowing dynamic memory allocation and efficient insertions and deletions.",
         "code_example": {
           "code": "// C code for linked list\n#include <stdio.h>\n#include <stdlib.h>\n\nstruct Node {\n    int data;\n    struct Node* next;\n};\n\nint main() {\n    struct Node* head = NULL;\n\n    // Inserting elements into the linked list\n    head = (struct Node*)malloc(sizeof(struct Node));\n    head->data = 1;\n    head->next = NULL;\n\n    struct Node* second = (struct Node*)malloc(sizeof(struct Node));\n    second->data = 2;\n    second->next = NULL;\n    head->next = second;\n\n    return 0;\n}",
