@@ -11,6 +11,7 @@ import SQL from "../Topics/SQL";
 import Git from "../Topics/Git";
 import SignUp from "../pages/SignUp";
 
+
 function AppRoutes() {
   return (
     <Routes>
@@ -19,7 +20,6 @@ function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/product" element={<Product />} />
       <Route path="/signup" element={<SignUp />} />
-
       <Route path="/learn" element={<Learn />} />
       <Route path="/dsa" element={<DSA />} />
       <Route path="/oop" element={<OOP />} />
