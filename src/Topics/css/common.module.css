@@ -16,7 +16,7 @@
   border: 2px solid var(--main-text-color);
   border-radius: var(--border-radius);
   height: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .index ul {
@@ -87,3 +87,4 @@ p {
     margin: 0;
   }
 }
+
