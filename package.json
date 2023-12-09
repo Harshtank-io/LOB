@@ -1,7 +1,7 @@
 {
-  "name": "linesofbinary",
+  "name": "lob",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,12 +19,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@studio-freight/lenis": "^1.0.29",
     "@visx/drag": "^3.3.0",
     "@visx/visx": "^3.3.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "locomotive-scroll": "^4.1.4",
     "lottie-react": "^2.4.0",
     "openai": "^4.2.0",
     "prism-react-renderer": "^2.0.6",
@@ -36,6 +38,7 @@
     "react-router-dom": "^6.16.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-zoom-pan-pinch": "^3.1.0",
+    "smooth-scrollbar": "^8.8.4",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
@@ -49,5 +52,17 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "react-svg-loader": "^3.0.3",
     "vite": "^4.4.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mannthakar24/LOB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mannthakar24/LOB/issues"
+  },
+  "homepage": "https://github.com/Mannthakar24/LOB#readme"
 }
