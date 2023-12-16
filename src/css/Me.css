@@ -1,21 +1,23 @@
 .me-container {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10%;
+ 
+  margin: auto auto 10% auto ;
   display: flex;
-  border-radius: 20px;
   align-items: center;
   width: 80%;
-  color: white;
+  color: black;
+  background: #f9bb2b;
+  background-image: radial-gradient(rgb(0, 0, 0) 1.2px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
 }
 .me-text {
   flex: 1;
-  padding: 50px;    
+  padding: 50px;
   justify-content: left;
 }
 .me-info {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .me-text > h1 {
@@ -47,5 +49,3 @@
     font-size: 40px; /* Further reduce font size for smaller screens */
   }
 }
-
-

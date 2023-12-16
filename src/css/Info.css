@@ -4,9 +4,9 @@
   margin-right: 10%;
   margin-bottom: 10%;
   display: flex;
-  border-radius: 20px;
+
   align-items: center;
-  background: rgb(249, 187, 43);
+  background: #cd40ff;
   height: 500px;
   width: 80%;
 }

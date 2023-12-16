@@ -8,7 +8,7 @@ export default function Me() {
           <img src={me} loading="lazy" alt="Harsh" />
         </div>
         <div className="me-text">
-          <h1>Kown Me!!</h1>
+          <h1>know Me!!</h1>
           <div className="me-info">
             I am a student at Darshan Institute of Engineering and Technology,
             where I am pursuing my education in the field of Computer
